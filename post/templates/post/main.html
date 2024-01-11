@@ -12,6 +12,12 @@
       type="text/css"
       href="{% static 'post/css/base.css' %}"
     />
+    <link
+      id="appFavicon"
+      rel="icon"
+      type="image/x-icon"
+      href="https://free.vote/assets/favicon.ico?v=5"
+    />
     <!-- Required meta tags -->
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -46,24 +52,39 @@
 
         <ul class="navbar-nav ml-auto">
           {% if user.is_authenticated %}
-            <li class="nav-item m-1">
-              <a
-                type="button"
-                class="btn btn-outline-light"
-                href="{% url 'post-account' %}"
-                >Account</a
-              >
-            </li>
-            <li class="nav-item m-1">
-              <a type="button" class="btn btn-outline-light" href="{% url 'logout-post' %}">Logout</a>
-            </li>
+          <li class="nav-item m-1">
+            <a
+              type="button"
+              class="btn btn-outline-light"
+              href="{% url 'post-account' %}"
+              >Account</a
+            >
+          </li>
+          <li class="nav-item m-1">
+            <a
+              type="button"
+              class="btn btn-outline-light"
+              href="{% url 'logout-post' %}"
+              >Logout</a
+            >
+          </li>
           {% else %}
-            <li class="nav-item m-1">
-                <a type="button" class="btn btn-outline-light" href="{% url 'users-register' %}">Register</a>
-            </li>
-            <li class="nav-item m-1">
-                <a type="button" class="btn btn-outline-light" href="{% url 'login' %}">Login</a>
-            </li>
+          <li class="nav-item m-1">
+            <a
+              type="button"
+              class="btn btn-outline-light"
+              href="{% url 'users-register' %}"
+              >Register</a
+            >
+          </li>
+          <li class="nav-item m-1">
+            <a
+              type="button"
+              class="btn btn-outline-light"
+              href="{% url 'login' %}"
+              >Login</a
+            >
+          </li>
           {% endif %}
         </ul>
       </div>
@@ -75,8 +96,8 @@
     <script src="{% static 'post/js/popper.js' %}"></script>
     <script src="{% static 'post/js/bootstrap.js' %}"></script>
     <script>
-      function singlePostit(postitId){
-        let path='single-postit/' + postitId + '/';
+      function singlePostit(postitId) {
+        let path = "single-postit/" + postitId + "/";
         location.replace(path);
       }
     </script>

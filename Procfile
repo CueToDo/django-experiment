@@ -8,4 +8,4 @@ web: gunicorn django-experiment.wsgi
 
 # https://devcenter.heroku.com/articles/release-phase
 
-release: ./manage.py migrate --no-input
+#release: ./manage.py migrate --no-input

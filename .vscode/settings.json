@@ -1,5 +1,5 @@
 {
-    "python.defaultInterpreterPath": "D:\\Development\\Python\\Python.exe",
+    "python.defaultInterpreterPath": "D:\\Development\\Python 312\\Python.exe",
     "[python]": {
         "editor.defaultFormatter": "ms-python.autopep8",
         "editor.formatOnSave": true,

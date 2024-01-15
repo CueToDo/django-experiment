@@ -14,6 +14,7 @@ from pathlib import Path
 import os
 import secrets
 import dj_database_url
+import cloudinary
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -39,7 +40,7 @@ SECRET_KEY = os.environ.get(
 # The `DYNO` env var is set on Heroku CI, but it's not a real Heroku app, so we have to
 # also explicitly exclude CI:
 # https://devcenter.heroku.com/articles/heroku-ci#immutable-environment-variables
-IS_HEROKU_APP = "DYNO" in os.environ and not "CI" in os.environ
+IS_HEROKU_APP = "DYNO" in os.environ and "CI" not in os.environ
 
 # SECURITY WARNING: don't run with debug turned on in production!
 if not IS_HEROKU_APP:
@@ -68,6 +69,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'cloudinary',
+    'cloudinary_storage'
 ]
 
 MIDDLEWARE = [
@@ -193,3 +196,12 @@ LOGIN_URL = 'login'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
+
+
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME': 'dumccphta',
+    'API_KEY': '671945334457354',
+    'API_SECRET': 'PIQSaDEl5V3qiLEPkM0bb1zPDO8'
+}
+
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'

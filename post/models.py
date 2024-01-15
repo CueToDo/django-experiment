@@ -49,7 +49,7 @@ class PostIt(models.Model):
             if days == 1:
                 return '1 day ago'
             else:
-                return f'${str(days)} days ago'
+                return f'{str(days)} days ago'
 
         if 30 <= days <= 365:
             months = math.floor(days / 30)

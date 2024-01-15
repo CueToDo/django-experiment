@@ -14,7 +14,6 @@ from pathlib import Path
 import os
 import secrets
 import dj_database_url
-import cloudinary
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -200,8 +199,8 @@ MEDIA_URL = '/media/'
 
 CLOUDINARY_STORAGE = {
     'CLOUD_NAME': 'dumccphta',
-    'API_KEY': '671945334457354',
-    'API_SECRET': 'PIQSaDEl5V3qiLEPkM0bb1zPDO8'
+    'API_KEY': os.environ.get('CLOUDINARY_API_KEY'),
+    'API_SECRET': os.environ.get('CLOUDINARY_API_SECRET')
 }
 
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
